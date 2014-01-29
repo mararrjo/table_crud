@@ -26,7 +26,7 @@
                     <td><?php echo $coche["combustible"] ?></td>
                     <td><?php echo $coche["precio"] ?></td>
                     <td>
-                        <a href=""><button>Modificar</button></a>
+                        <a href="<?php echo \core\URL::generar("concesionario/form_modificar/".$coche["id"]); ?>"><button>Modificar</button></a>
                         <a href=""><button>Eliminar</button></a>
                     </td>
                 </tr>
