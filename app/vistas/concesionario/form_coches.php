@@ -26,7 +26,7 @@
         <option name="op_marca" value="Mercedes">Mercedes</option>
         <option name="op_marca" value="Peugeot">Peugeot</option>
         <option name="op_marca" value="Renault">Renault</option>
-        <option name="op_marca" value="Seat">Seat</option>
+        <option  name="op_marca" value="Seat">Seat</option>
     </select><br>
     <label>Modelo:</label>
     <input type="text" id="modelo" name="modelo" required value="<?php echo $datos["values"]["modelo"] ?>">
@@ -62,4 +62,11 @@
             options[i].setAttribute("selected","selected");
         }
     }
+    
+    if(/eliminar/.test("<?php echo $metodo ?>")){
+        $("input").attr("readonly","readonly");
+        $("select").attr("disabled","disabled");
+        $("input[type='radio']").attr("disabled","disabled");
+    }
+    
 </script>

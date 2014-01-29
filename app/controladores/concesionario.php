@@ -68,5 +68,18 @@ class concesionario extends \core\Controlador {
             \core\HTTP_Respuesta::enviar($http_body);
         }
     }
+    
+    public function form_eliminar(array $datos = array()) {
+        
+        $id = \core\HTTP_Requerimiento::request("id");
+        
+        $coches = \modelos\Datos_SQL::tabla("coches")->select(array("where"=>"id=$id"));
+        $datos["values"] = $coches[0];
+        $datos["values"]["id"] = $id;
+        $datos["view_content"] = \core\Vista::generar(__FUNCTION__, $datos);
+        $http_body = \core\Vista_Plantilla::generar("plantilla_principal", $datos);
+        \core\HTTP_Respuesta::enviar($http_body);
+        
+    }
 
 }

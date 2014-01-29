@@ -27,7 +27,7 @@
                     <td><?php echo $coche["precio"] ?></td>
                     <td>
                         <a href="<?php echo \core\URL::generar("concesionario/form_modificar/".$coche["id"]); ?>"><button>Modificar</button></a>
-                        <a href=""><button>Eliminar</button></a>
+                        <a href="<?php echo \core\URL::generar("concesionario/form_eliminar/".$coche["id"]); ?>"><button>Eliminar</button></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
