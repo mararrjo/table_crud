@@ -1,125 +1,200 @@
-/* 
-    Document   : principal
-    Created on : 25-sep-2013, 16:21:08
-    Author     : jesus
-    Description:  Purpose of the stylesheet follows.
-*/
 
-root { 
-    display: block;
+#titulo{
+    color: #41414e;
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 3px 3px 2px;
+    clear: right;
 }
 
-h1#titulo {
-	display: inline;
+.subtitulo {
+    color: #41414e;
+    font-size: 34px;
+    text-align: center;
+    border-bottom: solid 1px;
 }
 
-
-
-
-div#div_derecha_logo {
-	position: absolute;
-	float: right;
-	width: 300px;
-	padding: 2px;
-	border: 2px solid grey;
-	top: 5px;
-	right: 5px;
-	background-color: yellow;
+.form_label {
+    /*text-align: center;*/
+    color: #41414e;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #41414e;
 }
 
-div#div_menu {
-	padding: 5px;
-	background-color: lightblue;
+.form_error {
+    color: red;
 }
 
-div#div_menu fieldset {
-	
-	padding: 0px 0px 5px 0px;
-}
-
-div#div_menu fieldset legend {
-	
-	color: blue;
-}
-
-ul#menu {
-	margin: 0px;
-	padding: 5px;
-	list-style: none;
-	color: white;
-}
-
-ul#menu li.item {
-	float: left;
-	border: 1px solid green;
-	background-color: lightgreen;
-	padding: 5px;
-	margin: 0px 0px;
-	background-color: blue;
-
-}
-
-ul#menu li.item:hover {
-	position: relative;
-	z-index: 1;
-	border: 1px yellow solid;
-	outline: yellow dotted thick;
-}
-
-ul#menu li.item a {
-	text-decoration: none;
-	color: white;
-
-}
-
-ul#menu li.item a:visited {
-	text-decoration: none;
-}
-
-ul#menu li.item a:hover {
-	color: yellow;
-}
-
-ul#menu li.item a:active {
-	color: orange;
-	background-color: #FF704D;
-}
-
-form {
-	margin: 5px;
-	border: 3px solid lightgrey;
-	padding: 5px;
-	background-color: lightblue;
-}
-
-.requerido {
-	
-	color: orange;
-}
-
-
-div#pie {
-	outline: 5px solid lightblue;
-	margin: 10px 5px;
-	border: 3px solid lightgrey;
-	background-color: lightblue;
-	padding: 5px;
+.formulario {
+    position: relative;
+    width: 50%;
+    left: 25%;
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: #6666ff;
+    /*box-shadow: 4px 4px 2px 3px #3333ff;*/
 }
 
 .boton {
-	margin: 5px 5px;
-	padding: 2px;
-	line-height: 170%;
-	background-color: lightgray;
-	border: 1px solid black;
-	text-decoration: none;
+    width: 100px;
+    height: 30px;
 }
 
-table {
-	border: 3px solid black;
-	border-collapse: collapse;
+#b_cancelar {
+    position: relative;
+    float: right;
 }
 
-table td, table th {
-	padding: 5px;
+#b_enviar {
+    /*    position: relative;
+        float: left;*/
+}
+
+.seccion {
+    position: relative;
+    width: 80%;
+    left: 10%;
+}
+
+#tabla_listado {
+    position: relative;
+    width: 100%;
+    border-collapse:collapse;
+    text-align: center;
+    -webkit-opacity: .80;
+    -moz-opacity: .80;
+    opacity: .80;
+    
+}
+
+#tabla_listado tbody td:hover {
+    background-color: #9999ff; 
+}
+
+#tabla_listado th, #tabla_listado tfoot td {
+    background: -webkit-linear-gradient(top, rgb(51, 51, 255), rgb(85, 85, 255));
+    background: -moz-linear-gradient(top, rgb(51, 51, 255), rgb(85, 85, 255));
+    background: -o-linear-gradient(top, rgb(51, 51, 255), rgb(85, 85, 255));
+    background: -ms-linear-gradient(top, rgb(51, 51, 255), rgb(85, 85, 255));
+    background-color: #3333ff;
+    color: white;
+}
+
+#tabla_listado td {
+    background-color: #6699ff;
+}
+
+#opciones {
+    list-style-type: none;
+    margin: 2px;
+    text-decoration: underline;
+    text-align: justify;
+}
+
+.itemOpciones {
+
+}
+
+#botonAnexar {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    background: -webkit-linear-gradient(top, rgb(181, 181, 255), rgb(85, 85, 255));
+    background: -moz-linear-gradient(top, rgb(181, 181, 255), rgb(85, 85, 255));
+    background: -o-linear-gradient(top, rgb(181, 181, 255), rgb(85, 85, 255));
+    background: -ms-linear-gradient(top, rgb(181, 181, 255), rgb(85, 85, 255));
+    border: solid 1px;
+    border-radius: 3px;
+    margin: 0px;
+}
+
+#tabla_listado a{
+    cursor: pointer;
+}
+
+#botonAnexar:hover{
+    background: -webkit-linear-gradient(top, #7777ff, #aaaaff);
+    background: -moz-linear-gradient(top, #7777ff, #aaaaff);
+    background: -o-linear-gradient(top, #7777ff, #aaaaff);
+    background: -ms-linear-gradient(top, #7777ff, #aaaaff);
+}
+
+#botonAnexar:active{
+    background: -webkit-linear-gradient(top, #5555ff, #7777ff);
+    ackground: -moz-linear-gradient(top, #5555ff, #7777ff);
+    background: -o-linear-gradient(top, #5555ff, #7777ff);
+    background: -ms-linear-gradient(top, #5555ff, #7777ff);
+}
+
+.seccion a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.seccion a:hover {
+    color: #555555;
+}
+
+#div_menu{
+    padding: 3px 0px 3px 0px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.item {
+    float: left;
+    height: 30px;
+    margin-left: 0xp;
+    margin-top: -17px;
+    margin-right: 5px;
+    background: -webkit-linear-gradient(top, rgb(102, 153, 255), rgb(65, 75, 255), rgb(51, 51, 255));
+    background: -moz-linear-gradient(top, rgb(102, 153, 255), rgb(65, 75, 255), rgb(51, 51, 255));
+    background: -o-linear-gradient(top, rgb(102, 153, 255), rgb(65, 75, 255), rgb(51, 51, 255));
+    background: -ms-linear-gradient(top, rgb(102, 153, 255), rgb(65, 75, 255), rgb(51, 51, 255));
+    padding: 5px;
+    border-radius: 3px;
+    line-height: 2.3em;
+}
+
+.item a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.item:hover {
+    background: -webkit-linear-gradient(top, #6699ff, #5555ff);
+    background: -moz-linear-gradient(top, #6699ff, #5555ff);
+    background: -o-linear-gradient(top, #6699ff, #5555ff);
+    background: -ms-linear-gradient(top, #6699ff, #5555ff);
+    background-color: #4444ff;
+}
+
+#cabecera {
+    background-color: #6699ff;
+    height: 100px;
+    margin-top: -20px;
+    background: -webkit-linear-gradient(bottom, #6699ff, #5555ff);
+    background: -moz-linear-gradient(bottom, #6699ff, #5555ff);
+    background: -o-linear-gradient(bottom, #6699ff, #5555ff);
+    background: -ms-linear-gradient(bottom, #6699ff, #5555ff);
+}
+
+#pie {
+    background-color: #6699ff;
+    color: white;
+    padding: 8px;
+    -webkit-opacity: .70;
+    -moz-opacity: .70;
+    opacity: .70;
+}
+
+#cuerpo {
+    margin-bottom: 40px;
+    margin-top: 60px;
 }

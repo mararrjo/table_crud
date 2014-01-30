@@ -7,7 +7,7 @@
         $accion = $accion.$datos["values"]["id"];
     }
 ?>
-<form method="post" name="formulario" id="<?php echo \core\Controlador::get_metodo_invocado(); ?>" action="<?php echo $accion ?>">
+<form method="post" class="formulario" name="formulario" id="<?php echo \core\Controlador::get_metodo_invocado(); ?>" action="<?php echo $accion ?>">
     <input type="hidden" id="id" name="id" value="<?php echo $datos["values"]["id"] ?>">
     <p>Por favor, rellene todos los campos del formulario.</p>
     <label>Matrícula:</label>
@@ -39,7 +39,7 @@
     <input type="radio" name="combustible" value="Diesel" >Diesel<br>
     <?php echo \core\HTML_Tag::span_error("combustible", $datos) ?><br>
     <label>Precio:</label>
-    <input type="text" id="precio" name="precio" required value="<?php echo $datos["values"]["precio"] ?>">
+    <input type="text" id="precio" name="precio" required value="<?php echo \core\Conversiones::decimal_punto_a_coma($datos["values"]["precio"]) ?>">
     <?php echo \core\HTML_Tag::span_error("precio", $datos) ?><br>
     <input type="submit" name="bAceptar" value="Aceptar">
     <input type="button" name="bCancelar" value="Cancelar" onclick="location.assign('<?php echo \core\URL::generar_sin_idioma("concesionario/index") ?>');" >

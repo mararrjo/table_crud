@@ -7,7 +7,7 @@ class coches extends \core\sgbd\bd {
     public static $tabla = "coches";
     
     public static $validaciones = array(
-            "id" => "errores_requerido && errores_referencia:id/coches/id",
+//            "id" => "errores_referencia:id/coches/id",
             "matricula" => "errores_requerido && errores_texto",
             "fabricacion" => "errores_requerido",
             "marca" => "errores_requerido && errores_texto",
@@ -19,13 +19,19 @@ class coches extends \core\sgbd\bd {
 
     public static function insertar(array &$fila) {
     
-        return self::insert_row($fila, self::$tabla);
+        return self::insert($fila, self::$tabla);
         
     }
     
     public static function modificar(array &$fila) {
     
-        return self::update_row($fila, self::$tabla);
+        return self::update($fila, self::$tabla);
+        
+    }
+    
+    public static function eliminar(array &$fila) {
+    
+        return self::delete($fila, self::$tabla);
         
     }
 

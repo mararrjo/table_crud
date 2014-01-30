@@ -34,6 +34,7 @@ class concesionario extends \core\Controlador {
     public function form_anadir_validar(array $datos = array()) {
 
         if (!\core\Validaciones::errores_validacion_request(\modelos\coches::$validaciones, $datos)) {
+            $datos["values"]["precio"] = \core\Conversiones::decimal_coma_a_punto($datos["values"]["precio"]);
             \modelos\Datos_SQL::tabla("coches")->insertar($datos["values"]);
             \core\HTTP_Respuesta::set_header_line("location", \core\URL::generar("concesionario/index"));
             \core\HTTP_Respuesta::enviar();
@@ -43,22 +44,29 @@ class concesionario extends \core\Controlador {
             \core\HTTP_Respuesta::enviar($http_body);
         }
     }
-    
+
     public function form_modificar(array $datos = array()) {
 
         $id = \core\HTTP_Requerimiento::request("id");
-        
-        $coches = \modelos\Datos_SQL::tabla("coches")->select(array("where"=>"id=$id"));
-        $datos["values"] = $coches[0];
-        $datos["values"]["id"] = $id;
-        $datos["view_content"] = \core\Vista::generar(__FUNCTION__, $datos);
-        $http_body = \core\Vista_Plantilla::generar("plantilla_principal", $datos);
-        \core\HTTP_Respuesta::enviar($http_body);
+
+        $coches = \modelos\Datos_SQL::tabla("coches")->select(array("where" => "id=$id"));
+        if ($coches == null) {
+            $datos["mensaje"] = "No existe ningun coche con ese id";
+            \core\HTTP_Respuesta::cargar_controlador("errores", "index", $datos);
+        } else {
+            $datos["values"] = $coches[0];
+            $datos["values"]["id"] = $id;
+            $datos["view_content"] = \core\Vista::generar(__FUNCTION__, $datos);
+            $http_body = \core\Vista_Plantilla::generar("plantilla_principal", $datos);
+            \core\HTTP_Respuesta::enviar($http_body);
+        }
     }
-    
+
     public function form_modificar_validar(array $datos = array()) {
 
         if (!\core\Validaciones::errores_validacion_request(\modelos\coches::$validaciones, $datos)) {
+            $datos["values"]["id"] = \core\HTTP_Requerimiento::request("id");
+            $datos["values"]["precio"] = \core\Conversiones::decimal_coma_a_punto($datos["values"]["precio"]);
             \modelos\Datos_SQL::tabla("coches")->modificar($datos["values"]);
             \core\HTTP_Respuesta::set_header_line("location", \core\URL::generar("concesionario/index"));
             \core\HTTP_Respuesta::enviar();
@@ -68,18 +76,38 @@ class concesionario extends \core\Controlador {
             \core\HTTP_Respuesta::enviar($http_body);
         }
     }
-    
+
     public function form_eliminar(array $datos = array()) {
-        
+
         $id = \core\HTTP_Requerimiento::request("id");
-        
-        $coches = \modelos\Datos_SQL::tabla("coches")->select(array("where"=>"id=$id"));
-        $datos["values"] = $coches[0];
-        $datos["values"]["id"] = $id;
-        $datos["view_content"] = \core\Vista::generar(__FUNCTION__, $datos);
-        $http_body = \core\Vista_Plantilla::generar("plantilla_principal", $datos);
-        \core\HTTP_Respuesta::enviar($http_body);
-        
+
+        $coches = \modelos\Datos_SQL::tabla("coches")->select(array("where" => "id=$id"));
+
+        if ($coches == null) {
+            $datos["mensaje"] = "No existe ningun coche con ese id";
+            \core\HTTP_Respuesta::cargar_controlador("errores", "index", $datos);
+        } else {
+            $datos["values"] = $coches[0];
+            $datos["values"]["id"] = $id;
+            $datos["view_content"] = \core\Vista::generar(__FUNCTION__, $datos);
+            $http_body = \core\Vista_Plantilla::generar("plantilla_principal", $datos);
+            \core\HTTP_Respuesta::enviar($http_body);
+        }
+    }
+
+    public function form_eliminar_validar(array $datos = array()) {
+
+        $id = \core\HTTP_Requerimiento::request("id");
+        $coches = \modelos\Datos_SQL::tabla("coches")->select(array("where" => "id=" . $id));
+        if ($coches == null) {
+            $datos["mensaje"] = "No existe ningun coche con ese id";
+            \core\HTTP_Respuesta::cargar_controlador("errores", "index", $datos);
+        } else {
+            $datos["values"] = $coches[0];
+            \modelos\Datos_SQL::tabla("coches")->eliminar($datos["values"]);
+            \core\HTTP_Respuesta::set_header_line("location", \core\URL::generar("concesionario/index"));
+            \core\HTTP_Respuesta::enviar();
+        }
     }
 
 }

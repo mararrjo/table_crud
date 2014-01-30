@@ -1,6 +1,6 @@
-<div>
-    <h1>Concesionario</h1>
-    <table>
+<div class="seccion">
+    <h1 class="subtitulo">Concesionario</h1>
+    <table id="tabla_listado">
         <thead>
             <tr>
                 <th>Id</th>
@@ -32,7 +32,7 @@
                 </tr>
             <?php endforeach; ?>
             <tr>
-                <td colspan="9"><a href="<?php echo \core\URL::generar_sin_idioma("concesionario/form_anadir") ?>"><button>Añadir</button></a></td>
+                <td colspan="9"><a href="<?php echo \core\URL::generar_sin_idioma("concesionario/form_anadir") ?>"><button id="botonAnexar">Añadir</button></a></td>
             </tr>
         </tbody>
     </table>
