@@ -9,12 +9,12 @@
 ?>
 <form method="post" class="formulario" name="formulario" id="<?php echo \core\Controlador::get_metodo_invocado(); ?>" action="<?php echo $accion ?>">
     <input type="hidden" id="id" name="id" value="<?php echo $datos["values"]["id"] ?>">
-    <p>Por favor, rellene todos los campos del formulario.</p>
+    <h3>Por favor, rellene todos los campos del formulario.</h3>
     <label>Matrícula:</label>
-    <input type="text" id="matricula" name="matricula" required value="<?php echo $datos["values"]["matricula"] ?>">
+    <input type="text" id="matricula" name="matricula" required value="<?php echo $datos["values"]["matricula"] ?>"><br>
     <?php echo \core\HTML_Tag::span_error("matricula", $datos) ?><br>
     <label>Fabricacion:</label>
-    <input type="date" id="fabricacion" name="fabricacion" required value="<?php echo $datos["values"]["fabricacion"] ?>">
+    <input type="date" id="fabricacion" name="fabricacion" required value="<?php echo $datos["values"]["fabricacion"] ?>"><br>
     <?php echo \core\HTML_Tag::span_error("fabricacion", $datos) ?><br>
     <label>Marca:</label>
     <select id="marca" name="marca">
@@ -27,22 +27,22 @@
         <option name="op_marca" value="Peugeot">Peugeot</option>
         <option name="op_marca" value="Renault">Renault</option>
         <option  name="op_marca" value="Seat">Seat</option>
-    </select><br>
+    </select><br><br>
     <label>Modelo:</label>
-    <input type="text" id="modelo" name="modelo" required value="<?php echo $datos["values"]["modelo"] ?>">
+    <input type="text" id="modelo" name="modelo" required value="<?php echo $datos["values"]["modelo"] ?>"><br>
     <?php echo \core\HTML_Tag::span_error("modelo", $datos) ?><br>
     <label>Versión:</label>
-    <input type="text" id="version" name="version" required value="<?php echo $datos["values"]["version"] ?>">
+    <input type="text" id="version" name="version" required value="<?php echo $datos["values"]["version"] ?>"><br>
     <?php echo \core\HTML_Tag::span_error("version", $datos) ?><br>
     <label>Combustible:</label><br>
     <input type="radio" name="combustible" value="Gasolina" checked="checked">Gasolina
     <input type="radio" name="combustible" value="Diesel" >Diesel<br>
     <?php echo \core\HTML_Tag::span_error("combustible", $datos) ?><br>
     <label>Precio:</label>
-    <input type="text" id="precio" name="precio" required value="<?php echo \core\Conversiones::decimal_punto_a_coma($datos["values"]["precio"]) ?>">
+    <input type="text" id="precio" name="precio" required value="<?php echo \core\Conversiones::decimal_punto_a_coma($datos["values"]["precio"]) ?>"><br>
     <?php echo \core\HTML_Tag::span_error("precio", $datos) ?><br>
-    <input type="submit" name="bAceptar" value="Aceptar">
-    <input type="button" name="bCancelar" value="Cancelar" onclick="location.assign('<?php echo \core\URL::generar_sin_idioma("concesionario/index") ?>');" >
+    <input type="submit" class="botonForm" name="bAceptar" value="Aceptar">
+    <input type="button" class="botonForm" name="bCancelar" value="Cancelar" onclick="location.assign('<?php echo \core\URL::generar_sin_idioma("concesionario/index") ?>');" >
 </form>
 <script type="text/javascript">
     //Selecciona el radio correspondiente para la columna combustible

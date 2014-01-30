@@ -1,7 +1,20 @@
 <?php
-
 namespace controladores;
 
+/**
+ * @author Jose María Martin Arroyo <chemari70@gmail.com>
+ * 
+ * La Clase Concesionario es el controlador para el mantenimiento de la tabla
+ * coches.
+ * Incluye las acciones necesarias para un mantenimiento basico, como son:
+ * Index: Muestra un listado con todos los coches.
+ * Form_anadir: Muestra el formulario para insertar nuevos coches.
+ * Form_modificar: Muestra el formulario para modificar coches existentes.
+ * Form_eliminar: Te pregunta si quieres eliminar un coche seleccionado.
+ * 
+ * Tambien estan incluidas las validaciones de los formularios. 
+ * 
+ */
 class concesionario extends \core\Controlador {
 
     public function index(array $datos = array()) {
