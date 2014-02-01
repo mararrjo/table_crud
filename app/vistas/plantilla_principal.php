@@ -21,7 +21,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL_ROOT; ?>recursos/css/principal.css" />
 
         <script type='text/javascript' src="<?php echo URL_ROOT . "recursos" . DS . "js" . DS . "jquery" . DS . "jquery-1.10.2.min.js"; ?>" ></script>
-        
+        <script type='text/javascript' src="<?php echo URL_ROOT."recursos".DS."js".DS."general.js"; ?>" ></script>
     </head>
 
     <body style="background: url(<?php echo URL_ROOT."recursos/imagenes/fondo_autopista.jpg" ?>)">
@@ -55,6 +55,8 @@
             Fecha última actualización: 1 de febrero de 2013.
         </div>
 
+        <?php echo \core\HTML_Tag::post_request_form(); ?>
+        
     </body>
 
 </html>

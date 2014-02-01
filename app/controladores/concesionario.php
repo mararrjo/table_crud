@@ -1,4 +1,5 @@
 <?php
+
 namespace controladores;
 
 /**
@@ -61,7 +62,6 @@ class concesionario extends \core\Controlador {
     public function form_modificar(array $datos = array()) {
 
         $id = \core\HTTP_Requerimiento::request("id");
-
         $coches = \modelos\Datos_SQL::tabla("coches")->select(array("where" => "id=$id"));
         if ($coches == null) {
             $datos["mensaje"] = "No existe ningun coche con ese id";
@@ -77,6 +77,8 @@ class concesionario extends \core\Controlador {
 
     public function form_modificar_validar(array $datos = array()) {
 
+        
+        
         if (!\core\Validaciones::errores_validacion_request(\modelos\coches::$validaciones, $datos)) {
             $datos["values"]["id"] = \core\HTTP_Requerimiento::request("id");
             $datos["values"]["precio"] = \core\Conversiones::decimal_coma_a_punto($datos["values"]["precio"]);
@@ -84,6 +86,7 @@ class concesionario extends \core\Controlador {
             \core\HTTP_Respuesta::set_header_line("location", \core\URL::generar("concesionario/index"));
             \core\HTTP_Respuesta::enviar();
         } else {
+            $datos["values"]["id"] = \core\HTTP_Requerimiento::request("id");
             $datos["view_content"] = \core\Vista::generar("form_modificar", $datos);
             $http_body = \core\Vista_Plantilla::generar("plantilla_principal", $datos);
             \core\HTTP_Respuesta::enviar($http_body);

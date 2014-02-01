@@ -4,7 +4,7 @@
 			echo "<p>Error indefinido</p>";
 	}
 	else {
-		echo "<p>{$datos['mensaje']}</p>";
+		echo "<h2>{$datos['mensaje']}</h2>";
 	}
 
 	if (isset($datos['url_continuar']))

@@ -61,7 +61,7 @@
     background: -ms-linear-gradient(top, rgb(181, 181, 255), rgb(85, 85, 255));
     border: solid 1px;
     border-radius: 3px;
-    margin: 0px;
+    padding: 5px;
     font-size: 14px;
 }
 
@@ -195,14 +195,14 @@
     background: -ms-linear-gradient(top, #5555ff, #7777ff);
 }
 
-.seccion a {
+/*.seccion a {
     text-decoration: none;
     color: #333333;
-}
+}*/
 
-.seccion a:hover {
+/*.seccion a:hover {
     color: #555555;
-}
+}*/
 
 #div_menu{
     padding: 3px 0px 3px 0px;

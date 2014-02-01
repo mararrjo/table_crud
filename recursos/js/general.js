@@ -28,7 +28,8 @@ function set_title_attr(objeto) {
 function submit_post_request_form(action, id) {
 	$("#post_request_form").attr("action",action);
 	$("#id").attr("value", id);
+//	 alert("post_request_form.submit("+$("#post_request_form").attr("action")+" , "+$("#id").val()+")");
 	$("#post_request_form").submit();
-	// alert("post_request_form.submit("+$("#post_request_form").attr("action")+" , "+$("#id").val()+")");
+//    alert("hola?");
 }
 
