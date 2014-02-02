@@ -125,6 +125,26 @@ class Conversiones {
 			return $fecha_hora_mysql;
 		
 	}
+        
+        
+	/**
+	 * Convierte una fecha formato de mysql a formato europeo
+	 * 
+	 * @param string $fecha_hora_mysql
+	 * @return string
+	 */
+	public static function fecha_mysql_a_es($fecha_mysql) {
+		
+		$patron_fecha="/^\d{4}\-\d{1,2}\-\d{1,2}$/";
+		if (preg_match($patron_fecha, $fecha_mysql)) {
+			// Creamos un objeto de la clase \DateTime que nos servirá para la conversión.
+			$fecha = \DateTime::createFromFormat("Y-m-d", $fecha_mysql);
+			return($fecha->format("d/m/Y"));
+		}
+		else
+			return $fecha_mysql;
+		
+	}
 
 	
 	/**

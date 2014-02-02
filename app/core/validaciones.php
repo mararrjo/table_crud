@@ -345,6 +345,31 @@ class Validaciones  {
 		if ($mensaje=="") $mensaje=false;
 		return $mensaje;
 	}
+	
+        /**
+	 * Cadena representa una fecha válida, con el formato dd/mm/aaaa o aaaa/mm/dd
+	 * @param type $cadena
+	 * @return boolean
+	 */
+	public static function errores_fecha($cadena){
+		$mensaje="";
+		if ($cadena!=null) {
+			$cadena=str_replace(array(' ', '-', '.', ',', ':'), '/', $cadena);
+			/* Para que sea mas facil y ahorrar comprobaciones cambiamos por / todos los signos que pone en el array, de esta manera la fecha siempre sera del tipo dd/mm/aaaa */
+			$patron_fecha="/^(\d{1,2}\/\d{1,2}\/\d{4})|(\d{4}\/\d{1,2}\/\d{1,2})/";
+			$encuentros=array();
+			if (preg_match($patron_fecha, $cadena, $encuentros)) {
+				$numeros = explode('/', $encuentros[0]); //con explode convertimos en subcadenas el array cadena, cada subcadena esta formada por la division que hace el caracter.
+				if (!mktime ($numeros[1], $numeros[0], $numeros[2]))
+					$mensaje="La fecha  {$encuentros[0]} es errónea . Revísela. ";
+
+			}
+			else
+				$mensaje="La fecha es errónea. Revísela. ";
+		}
+		if ($mensaje=="") $mensaje=false;
+		return $mensaje;
+	}
 
 	
 	

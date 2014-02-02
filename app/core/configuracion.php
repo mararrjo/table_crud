@@ -35,6 +35,7 @@ class Configuracion {
     public static $tipos_mime_reconocidos = array(
         'text/html', 'text/xml', 'text/json', 'application/excel',
     );
+    
     // u847514393_chema localhost
     public static $db = array(
         'server' => 'localhost',
@@ -43,23 +44,15 @@ class Configuracion {
         'db_name' => 'u847514393_chema',
         'prefix_' => 'daw2_'
     );
-
-    // localhost
-//	public static $db = array(
-//		'server'   => 'localhost',
-//		'user'     => 'daw2_user',
-//		'password' => 'daw2_user',
-//		'db_name'  => 'daw2',
-//		'prefix_'  => 'daw2_'
-//	);
-    // hostinger
-//	public static $db = array(
-//		'server'   => 'mysql.hostinger.es',
-//		'user'     => 'u452950836_daw2',
-//		'password' => 'u452950836_daw2',
-//		'db_name'   => 'u452950836_daw2',
-//		'prefix_'  => 'daw2_'
-//	);
+    
+      // u847514393_chema cuenta hostinger
+//    public static $db = array(
+//        'server' => 'mysql.hostinger.es',
+//        'user' => 'u847514393_chema',
+//        'password' => '65186518',
+//        'db_name' => 'u847514393_chema',
+//        'prefix_' => 'daw2_'
+//    );
 
     /**
      * Define array llamado recursos_y_suariosla con la definición de todos los permisos de acceso a los recursos de la aplicación.

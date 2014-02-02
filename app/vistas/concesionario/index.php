@@ -17,7 +17,7 @@
                 <?php foreach ($datos["coches"] as $coche): ?>
                     <tr>
                         <td><?php echo $coche["matricula"] ?></td>
-                        <td><?php echo \core\Conversiones::fecha_hora_mysql_a_es($coche["fabricacion"]) ?></td>
+                        <td><?php echo \core\Conversiones::fecha_mysql_a_es($coche["fabricacion"]) ?></td>
                         <td><?php echo $coche["marca"] ?></td>
                         <td><?php echo $coche["modelo"] ?></td>
                         <td><?php echo $coche["version"] ?></td>

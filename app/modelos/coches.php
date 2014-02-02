@@ -28,7 +28,7 @@ class coches extends \core\sgbd\bd {
     public static $validaciones = array(
 //            "id" => "errores_referencia:id/coches/id",
             "matricula" => "errores_requerido && errores_texto",
-            "fabricacion" => "errores_requerido",
+            "fabricacion" => "errores_requerido && errores_fecha",
             "marca" => "errores_requerido && errores_texto",
             "modelo" => "errores_requerido && errores_texto",
             "version" => "errores_requerido && errores_texto",

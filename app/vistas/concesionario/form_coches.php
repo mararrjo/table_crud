@@ -9,8 +9,8 @@
 ?>
 <form method="post" class="formulario" name="formulario" id="<?php echo \core\Controlador::get_metodo_invocado(); ?>" action="<?php echo $accion ?>">
     <input type="hidden" id="id" name="id" value="<?php echo $datos["values"]["id"] ?>">
-    <h3>Por favor, rellene todos los campos del formulario.</h3>
-    <label>Matrícula:</label>
+    <h3 id="rellenar">Por favor, rellene todos los campos del formulario.</h3>
+    <label>Matrícula (dd/mm/yyyy):</label>
     <input type="text" id="matricula" name="matricula" required value="<?php echo $datos["values"]["matricula"] ?>"><br>
     <?php echo \core\HTML_Tag::span_error("matricula", $datos) ?><br>
     <label>Fabricacion:</label>
@@ -20,13 +20,17 @@
     <select id="marca" name="marca">
         <option name="op_marca" value="Audi">Audi</option>
         <option name="op_marca" value="BMW">BMW</option>
+        <option name="op_marca" value="Chevrolet">Chevrolet</option>
         <option name="op_marca" value="Ford">Ford</option>
         <option name="op_marca" value="Honda">Honda</option>
         <option name="op_marca" value="Hyundai">Hyundai</option>
+        <option name="op_marca" value="Mazda">Mazda</option>
         <option name="op_marca" value="Mercedes">Mercedes</option>
         <option name="op_marca" value="Peugeot">Peugeot</option>
         <option name="op_marca" value="Renault">Renault</option>
-        <option  name="op_marca" value="Seat">Seat</option>
+        <option name="op_marca" value="Seat">Seat</option>
+        <option name="op_marca" value="Subaru">Subaru</option>
+        <option name="op_marca" value="Toyota">Toyota</option>
     </select><br><br>
     <label>Modelo:</label>
     <input type="text" id="modelo" name="modelo" required value="<?php echo $datos["values"]["modelo"] ?>"><br>
@@ -67,6 +71,7 @@
         $("input").attr("readonly","readonly");
         $("select").attr("disabled","disabled");
         $("input[type='radio']").attr("disabled","disabled");
+        $("#rellenar").hide();
     }
     
 </script>
