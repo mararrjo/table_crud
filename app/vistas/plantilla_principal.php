@@ -28,7 +28,7 @@
 
         <!-- Contenido que se visualizará en el navegador, organizado con la ayuda de etiquetas html -->
         <div id="cabecera">
-            <h1 id="titulo">Sitio de gestión de tablas</h1>
+            <h1 id="titulo">Gestión de bases de datos</h1>
             <div id="div_menu">
                 <ul id="menu" class="menu">
                     <li class="item"><a href="<?php echo \core\URL::generar("inicio/index") ?>">Inicio</a></li>

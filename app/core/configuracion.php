@@ -36,11 +36,12 @@ class Configuracion {
         'text/html', 'text/xml', 'text/json', 'application/excel',
     );
     
-    // u847514393_chema localhost
+    // u847514393_chema
     public static $db = array(
+//        'server' => 'mysql.hostinger.es',
         'server' => 'localhost',
         'user' => 'u847514393_chema',
-        'password' => 'u847514393_chema',
+        'password' => 'chemadaw2',
         'db_name' => 'u847514393_chema',
         'prefix_' => 'daw2_'
     );
@@ -49,7 +50,7 @@ class Configuracion {
 //    public static $db = array(
 //        'server' => 'mysql.hostinger.es',
 //        'user' => 'u847514393_chema',
-//        'password' => '65186518',
+//        'password' => 'chemadaw2',
 //        'db_name' => 'u847514393_chema',
 //        'prefix_' => 'daw2_'
 //    );

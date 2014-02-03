@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class modelos\coches | table_crud</title>
+
+	<script type="text/javascript" src="resources/combined.js?2780970235"></script>
+	<script type="text/javascript" src="elementlist.js?2922824076"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li><a href="namespace-controladores.html">controladores</a>
+						</li>
+				<li><a href="namespace-core.html">core<span></span></a>
+						<ul>
+				<li><a href="namespace-core.sgbd.html">sgbd</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="namespace-modelos.html">modelos</a>
+						</li>
+				<li><a href="namespace-None.html">None</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-modelos.coches.html">coches</a></li>
+				<li><a href="class-modelos.Datos_SQL.html">Datos_SQL</a></li>
+				<li><a href="class-modelos.Modelo_SQL.html">Modelo_SQL</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-modelos.html" title="Summary of modelos"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class coches</h1>
+
+
+	<div class="description">
+	
+<p>Esta clase contiene el nombre de la tabla que gestiona en la base de datos,
+las validaciones que necesita y los metodos para insertar, modificar y
+eliminar.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-core.sgbd.mysqli.html"><span>core\sgbd\mysqli</span></a>
+			
+			 implements 
+				<a href="class-core.sgbd.SQL_interface.html"><span>core\sgbd\SQL_interface</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-core.sgbd.bd.html"><span>core\sgbd\bd</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>modelos\coches</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-modelos.html">modelos</a><br />
+		
+
+				<b>Author:</b>
+				Jose María Martin Arroyo &lt;<a
+href="mailto:chemari70&#64;gmail.com">chemari70&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-modelos.coches.html#4-87" title="Go to source code">app/modelos/coches.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="insertar" id="_insertar">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insertar">#</a>
+		<code><a href="source-class-modelos.coches.html#39-53" title="Go to source code">insertar</a>( <span>array <var>&amp; $fila</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Inserta en la tabla coches de la base de datos una nueva fila. El array $fila
+contiene los datos con las columnas a insertar.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fila</var></dt>
+					<dd><code>array</code><br>$fila, contiene los datos del coche, cada columna es la clave y el valor su
+contenido.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>True, si se ha insertado con éxito en la base de datos False en caso contrario.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="modificar" id="_modificar">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_modificar">#</a>
+		<code><a href="source-class-modelos.coches.html#55-69" title="Go to source code">modificar</a>( <span>array <var>&amp; $fila</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Modifica en la tabla coches de la base de datos una fila ya existente. El
+array $fila contiene los datos con las columnas que se modificaran.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fila</var></dt>
+					<dd><code>array</code><br>$fila, contiene los datos del coche, cada columna es la clave y el valor su
+contenido.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>True, si se ha modificado con éxito en la base de datos False en caso
+contrario.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="eliminar" id="_eliminar">
+
+		<td class="attributes"><code>
+			 public static
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_eliminar">#</a>
+		<code><a href="source-class-modelos.coches.html#71-85" title="Go to source code">eliminar</a>( <span>array <var>&amp; $fila</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Elimina de la tabla coches de la base de datos una fila existente. El array
+$fila tiene los datos de la fila que se borrará.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$fila</var></dt>
+					<dd><code>array</code><br>$fila, contiene los datos del coche, cada columna es la clave y el valor su
+contenido.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>boolean</code><br>True, si se ha eliminado con éxito en la base de datos False en caso contrario.<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-core.sgbd.bd.html#methods">core\sgbd\bd</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-core.sgbd.bd.html#_recuperar_filas">recuperar_filas()</a>, 
+			<a href="class-core.sgbd.bd.html#_table">table()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-core.sgbd.mysqli.html#methods">core\sgbd\mysqli</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-core.sgbd.mysqli.html#___construct">__construct()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_commit_transacction">commit_transacction()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_connect">connect()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_delete">delete()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_delete_row">delete_row()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_disconnect">disconnect()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_escape_string">escape_string()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_execute">execute()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_get_prefix_tabla">get_prefix_tabla()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_get_rows">get_rows()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_get_table_name">get_table_name()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_insert">insert()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_insert_row">insert_row()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_last_insert_id">last_insert_id()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_last_query">last_query()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_rollback_transacction">rollback_transacction()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_select">select()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_set_table_name">set_table_name()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_start_transacction">start_transacction()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_update">update()</a>, 
+			<a href="class-core.sgbd.mysqli.html#_update_row">update_row()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="tabla" id="$tabla">
+		<td class="attributes"><code>
+			public static 
+			String
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-modelos.coches.html#13-18" title="Go to source code"><var>$tabla</var></a>
+		</td>
+		<td class="value"><code><span class="php-quote">&quot;coches&quot;</span></code></td>
+		<td class="description"><div>
+			<a href="#$tabla" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Almacena el nombre de la tabla.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Almacena el nombre de la tabla.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="validaciones" id="$validaciones">
+		<td class="attributes"><code>
+			public static 
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-modelos.coches.html#20-37" title="Go to source code"><var>$validaciones</var></a>
+		</td>
+		<td class="value"><code><span class="php-keyword1">array</span>(
+<span class="php-comment">//            &quot;id&quot; =&gt; &quot;errores_referencia:id/coches/id&quot;,</span>
+        <span class="php-quote">&quot;matricula&quot;</span> =&gt; <span class="php-quote">&quot;errores_requerido &amp;&amp; errores_texto&quot;</span>,
+        <span class="php-quote">&quot;fabricacion&quot;</span> =&gt; <span class="php-quote">&quot;errores_requerido &amp;&amp; errores_fecha&quot;</span>,
+        <span class="php-quote">&quot;marca&quot;</span> =&gt; <span class="php-quote">&quot;errores_requerido &amp;&amp; errores_texto&quot;</span>,
+        <span class="php-quote">&quot;modelo&quot;</span> =&gt; <span class="php-quote">&quot;errores_requerido &amp;&amp; errores_texto&quot;</span>,
+        <span class="php-quote">&quot;version&quot;</span> =&gt; <span class="php-quote">&quot;errores_requerido &amp;&amp; errores_texto&quot;</span>,
+        <span class="php-quote">&quot;combustible&quot;</span> =&gt; <span class="php-quote">&quot;errores_requerido &amp;&amp; errores_texto&quot;</span>,
+        <span class="php-quote">&quot;precio&quot;</span> =&gt; <span class="php-quote">&quot;errores_requerido &amp;&amp; errores_precio&quot;</span>
+    )</code></td>
+		<td class="description"><div>
+			<a href="#$validaciones" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Contiene una clave-valor por cada columna, excepto para id, que se gestiona
+de manera interna en los formularios. Ademas al ser auto-incremental no es
+necesario precisarlo al añadir un nuevo coche.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Contiene una clave-valor por cada columna, excepto para id, que se gestiona
+de manera interna en los formularios. Ademas al ser auto-incremental no es
+necesario precisarlo al añadir un nuevo coche.</p>
+
+
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-core.sgbd.mysqli.html#properties">core\sgbd\mysqli</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-core.sgbd.mysqli.html#$connection"><var>$connection</var></a>, 
+			<a href="class-core.sgbd.mysqli.html#$query"><var>$query</var></a>, 
+			<a href="class-core.sgbd.mysqli.html#$result"><var>$result</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		table_crud API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
