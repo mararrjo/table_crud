@@ -1,19 +1,21 @@
 <?php
     $metodo = \core\Controlador::get_metodo_invocado();
-    $accion = !preg_match("/validar$/", \core\Controlador::get_metodo_invocado()) ? 
-            \core\URL::generar_sin_idioma("concesionario/".$metodo."_validar") : 
-            \core\URL::generar_sin_idioma("concesionario/".$metodo);
-    if(preg_match("/modificar|eliminar/", \core\Controlador::get_metodo_invocado())){
-        $accion = $accion.$datos["values"]["id"];
-    }
+    $accion = !preg_match("/validar$/", $metodo) ? 
+            \core\URL::generar("concesionario/".$metodo."_validar") : 
+            \core\URL::generar("concesionario/".$metodo);
+    
+    // Esto pone el id en la url en los metodos de modificar y eliminar
+//    if(preg_match("/modificar|eliminar/", \core\Controlador::get_metodo_invocado())){
+//        $accion = $accion.$datos["values"]["id"];
+//    }
 ?>
-<form method="post" class="formulario" name="formulario" id="<?php echo \core\Controlador::get_metodo_invocado(); ?>" action="<?php echo $accion ?>">
+<form method="post" class="formulario" name="formulario" action="<?php echo $accion ?>">
     <input type="hidden" id="id" name="id" value="<?php echo $datos["values"]["id"] ?>">
     <h3 id="rellenar">Por favor, rellene todos los campos del formulario.</h3>
-    <label>Matrícula (dd/mm/yyyy):</label>
+    <label>Matrícula:</label>
     <input type="text" id="matricula" name="matricula" required value="<?php echo $datos["values"]["matricula"] ?>"><br>
     <?php echo \core\HTML_Tag::span_error("matricula", $datos) ?><br>
-    <label>Fabricacion:</label>
+    <label>Fabricacion (dd/mm/yyyy):</label>
     <input type="date" id="fabricacion" name="fabricacion" required value="<?php echo $datos["values"]["fabricacion"] ?>"><br>
     <?php echo \core\HTML_Tag::span_error("fabricacion", $datos) ?><br>
     <label>Marca:</label>
@@ -48,8 +50,10 @@
     <input type="submit" class="botonForm" name="bAceptar" value="Aceptar">
     <input type="button" class="botonForm" name="bCancelar" value="Cancelar" onclick="location.assign('<?php echo \core\URL::generar_sin_idioma("concesionario/index") ?>');" >
 </form>
+
 <script type="text/javascript">
-    //Selecciona el radio correspondiente para la columna combustible
+
+    //Selecciona el radio correspondiente para la columna combustible.
     var combustible = "<?php echo $datos["values"]["combustible"] ?>";
     var radios = document.getElementsByName('combustible');
     for(i = 0; i < radios.length; i++){
@@ -58,7 +62,7 @@
         }
     }
     
-    //Selecciona el option correspondiente para la columna marca 
+    //Selecciona el option correspondiente para la columna marca.
     var marca = "<?php echo $datos["values"]["marca"] ?>";
     var options = document.getElementsByName("op_marca");
     for(i = 0; i < options.length; i++){
@@ -66,7 +70,9 @@
             options[i].setAttribute("selected","selected");
         }
     }
-    
+
+    //Si se esta eliminando, inhabilito todas las entradas para que no se 
+    // pueda escribir.
     if(/eliminar/.test("<?php echo $metodo ?>")){
         $("input").attr("readonly","readonly");
         $("select").attr("disabled","disabled");

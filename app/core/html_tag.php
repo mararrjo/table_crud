@@ -226,7 +226,7 @@ class HTML_Tag extends \core\Clase_Base {
 
 			</form>
 
-			<script type="text/javascript" />
+<!--			<script type="text/javascript" />
 				/**
 				* Envía una petición por post para ocultar parámetros a usuario y evitar que juegue con
 				* ellos modificando la URI mostrada .
@@ -241,7 +241,7 @@ class HTML_Tag extends \core\Clase_Base {
 					$("#post_request_form").submit();
 					// alert("post_request_form.submit("+$("#post_request_form").attr("action")+" , "+$("#id").val()+")");
 				}
-			</script>
+			</script>-->
 		</div>
 	<?php
 

@@ -30,6 +30,5 @@ function submit_post_request_form(action, id) {
 	$("#id").attr("value", id);
 //	 alert("post_request_form.submit("+$("#post_request_form").attr("action")+" , "+$("#id").val()+")");
 	$("#post_request_form").submit();
-//    alert("hola?");
 }
 

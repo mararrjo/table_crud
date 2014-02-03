@@ -26,15 +26,12 @@
                         <td>
                             <?php echo \core\HTML_Tag::a_boton_onclick("boton", array("concesionario", "form_modificar", $coche["id"]), "Modificar") ?>
                             <?php echo \core\HTML_Tag::a_boton_onclick("boton", array("concesionario", "form_eliminar", $coche["id"]), "Eliminar") ?>
-                            <!--<a href="<?php // echo \core\URL::generar("concesionario/form_modificar"); ?>"><button class="boton">Modificar</button></a>-->
-                            <!--<a href="<?php // echo \core\URL::generar("concesionario/form_eliminar/" . $coche["id"]); ?>"><button class="boton">Eliminar</button></a>-->
                         </td>
                     </tr>
                 <?php endforeach; ?>
                 <tr>
-                    <td colspan="9"><a href="<?php echo \core\URL::generar_sin_idioma("concesionario/form_anadir") ?>"><button id="botonAnexar">Añadir</button></a></td>
+                    <td colspan="9"><a href="<?php echo \core\URL::generar("concesionario/form_anadir") ?>"><button id="botonAnexar">Añadir</button></a></td>
                 </tr>
             </tbody>
         </table>
-    <!--</form>-->
 </div>
