@@ -20,11 +20,26 @@
 
         <link rel="stylesheet" type="text/css" href="<?php echo URL_ROOT; ?>recursos/css/principal.css" />
 
-        <script type='text/javascript' src="<?php echo URL_ROOT . "recursos" . DS . "js" . DS . "jquery" . DS . "jquery-1.10.2.min.js"; ?>" ></script>
-        <script type='text/javascript' src="<?php echo URL_ROOT."recursos".DS."js".DS."general.js"; ?>" ></script>
+        <script type='text/javascript' src="<?php echo URL_ROOT . "recursos/js/jquery/jquery-1.10.2.min.js"; ?>" ></script>
+        <script type='text/javascript' src="<?php echo URL_ROOT . "recursos/js/general.js"; ?>" ></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var alerta = '<?php echo isset($_SESSION["alerta"]) ? $_SESSION["alerta"] : "" ?>';
+                if (alerta) {
+                    $("#div_alerta").text(alerta);
+                    $("#div_alerta").fadeIn("slow", function() {
+                        $.delay("2000");
+                        $("#div_alerta").hide();
+                    });
+<?php // unset($_SESSION["alerta"])  ?>
+                }
+            });
+        </script>
+
     </head>
 
-    <body style="background: url(<?php echo URL_ROOT."recursos/imagenes/fondo_autopista.jpg" ?>)">
+    <body style="background: url(<?php echo URL_ROOT . "recursos/imagenes/fondo_autopista.jpg" ?>)">
 
         <!-- Contenido que se visualizará en el navegador, organizado con la ayuda de etiquetas html -->
         <div id="cabecera">
@@ -38,9 +53,8 @@
         </div>
 
         <div id="cuerpo">
-
+            <div id="div_alerta" style="display:none; background-color: #cccccc; border-radius: 10px; border: solid 1px;"></div>
             <div id="view_content">
-
                 <?php
                 echo $datos['view_content'];
                 ?>
@@ -56,7 +70,7 @@
         </div>
 
         <?php echo \core\HTML_Tag::post_request_form(); ?>
-        
+
     </body>
 
 </html>

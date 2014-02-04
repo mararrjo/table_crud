@@ -49,6 +49,7 @@ class concesionario extends \core\Controlador {
         if (!\core\Validaciones::errores_validacion_request(\modelos\coches::$validaciones, $datos)) {
             $datos["values"]["precio"] = \core\Conversiones::decimal_coma_a_punto($datos["values"]["precio"]);
             \modelos\Datos_SQL::tabla("coches")->insertar($datos["values"]);
+            $_SESSION["alerta"] = "Se ha insertado con exito el coche de matricula: ".$datos["values"]["matricula"];
             \core\HTTP_Respuesta::set_header_line("location", \core\URL::generar("concesionario/index"));
             \core\HTTP_Respuesta::enviar();
         } else {
